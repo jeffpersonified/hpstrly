@@ -1,0 +1,24 @@
+<h1>Listing urls</h1>
+
+<table>
+  <tr>
+    <th>URL</th>
+    <th>Shortened URL</th>
+    <th>Page Views</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @urls.each do |url| %>
+  <tr>
+    <td><%= url.in_url %></td>
+    <td><%= url.out_url %></td>
+    <td><%= url.page_views %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= button_to 'New url', new_url_path, :method => :get %>
