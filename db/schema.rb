@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(:version => 20121108225108) do
 
   create_table "urls", :force => true do |t|
-    t.text     "in_url"
-    t.string   "out_url"
-    t.integer  "page_views"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "original_url"
+    t.string   "short_url"
+    t.integer  "page_views",   :default => 0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
 end

@@ -10,8 +10,10 @@ class UrlsController < ApplicationController
   end
 
   def go
-    @url = Url.find_by_in_url!(params[:in_url])
-    redirect_to @url.out_url
+    @url = Url.find_by_short_url(params[:short_url])
+    @url.page_views += 1
+    @url.save
+    redirect_to @url.original_url
   end
 
   def new

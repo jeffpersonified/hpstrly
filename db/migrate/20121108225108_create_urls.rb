@@ -1,9 +1,9 @@
 class CreateUrls < ActiveRecord::Migration
   def change
     create_table :urls do |t|
-      t.text :in_url
-      t.string :out_url
-      t.integer :page_views
+      t.text :original_url
+      t.string :short_url
+      t.integer :page_views, :default => 0
 
       t.timestamps
     end

@@ -5,7 +5,10 @@ Shortener::Application.routes.draw do
   resources :urls
 
 
-  match ':in_url' => 'links#go'
+  match ':short_url' => 'urls#go'
+  
+  # match ':short_url' => 'urls#go'
+  # match '/short.en/:url' => 'urls#go'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

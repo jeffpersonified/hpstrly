@@ -1,12 +1,16 @@
 class Url < ActiveRecord::Base
-  attr_accessible :in_url, :out_url, :page_views
 
-  before_create :gen_url
+  attr_accessible :original_url, :short_url, :page_views
+  validates :original_url, :presence => true
+  validates :short_url, :uniqueness => true
+  validates_format_of :original_url, :with => URI::regexp(%w(http https))
+
+  before_create :gen_url, :if => Proc.new { |url| url.short_url.blank? }
 
   private
 
   def gen_url
-    random_string = SecureRandom.hex(5)
-    @out_url = "shortener/#{random_string}"
+    random_string = SecureRandom.hex(3)
+    self.short_url = "#{random_string}"
   end
 end
