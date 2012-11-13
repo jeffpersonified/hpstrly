@@ -9,7 +9,7 @@ class UrlsController < ApplicationController
     end
   end
 
-  def go
+  def show
     @url = Url.find_by_short_url(params[:short_url])
     @url.page_views += 1
     @url.save
