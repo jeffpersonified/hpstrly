@@ -1,12 +1,10 @@
 Shortener::Application.routes.draw do
-
-  devise_for :admins
-
   devise_for :users
 
-  root :to => 'urls#index'
-  
+  resources :users
   resources :urls
+
+  root :to => 'urls#index'
 
   match ':short_url' => 'urls#show'
 end

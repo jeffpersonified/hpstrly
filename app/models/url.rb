@@ -1,6 +1,8 @@
 class Url < ActiveRecord::Base
-
+  belongs_to :user
+  
   attr_accessible :original_url, :short_url, :page_views
+  
   validates :original_url, :presence => true
   validates :short_url, :uniqueness => true
   validates_format_of :original_url, :with => URI::regexp(%w(http https))
