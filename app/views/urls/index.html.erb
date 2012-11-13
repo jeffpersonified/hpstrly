@@ -10,7 +10,7 @@
     <th></th>
   </tr>
 
-<% @urls.each do |url| %>
+<% @urls && @urls.each do |url| %>
   <tr>
     <td><%= url.original_url %></td>
     <td><%= link_to url.short_url, url.short_url %></td>

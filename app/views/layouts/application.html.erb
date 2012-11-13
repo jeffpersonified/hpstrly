@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <div><% if flash[:error] %><h4><%= flash[:error] %></h4><% end %></div>
+
   <ul class="hmenu">
     <%= render 'devise/menu/registration_items' %>
     <%= render 'devise/menu/login_items' %>
