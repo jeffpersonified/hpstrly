@@ -1,7 +1,7 @@
 class UrlsController < ApplicationController
 
   def index
-    @urls = Url.all
+    @urls = current_user ? Url.where(:user_id => current_user.id) : []
   end
 
   def show
@@ -23,6 +23,7 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(params[:url])
+    @url.user = current_user
 
     if @url.save
       redirect_to urls_path
