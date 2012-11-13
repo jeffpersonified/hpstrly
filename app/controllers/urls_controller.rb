@@ -1,18 +1,18 @@
 class UrlsController < ApplicationController
 
   def index
-    @urls = current_user ? current_user.urls : session[:urls]
+    if current_user
+      @urls = current_user.urls
+    elsif session[:url_ids] and session[:url_ids].any?
+      @urls = Url.find(session[:url_ids])
+    else
+      @urls = []
+    end
   end
 
   def show
     @url = Url.find_by_short_url(params[:short_url])
     Url.where(:id => @url.id).update_all("page_views = page_views + 1")
-    # @url.update_all("page_views = page_views + 1")
-    # find thing
-    # @url.update.....
-    # puts @url
-    #   puts @url.id
-    #   @url = @url.id
     redirect_to @url.original_url
   end
 
@@ -25,10 +25,10 @@ class UrlsController < ApplicationController
     @url.user = current_user
 
     if @url.save
-      if session[:urls]
-        session[:urls] << @url
+      if session[:url_ids]
+        session[:url_ids] << @url.id
       else
-        session[:urls] = [@url]
+        session[:url_ids] = [@url.id]
       end
       redirect_to urls_path
     else
