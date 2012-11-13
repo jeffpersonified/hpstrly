@@ -1,13 +1,10 @@
 <h1>Listing urls</h1>
-
+<%= session.inspect %>
 <table>
   <tr>
     <th>URL</th>
     <th>Shortened URL</th>
     <th>Page Views</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @urls && @urls.each do |url| %>
