@@ -1,6 +1,7 @@
 class UrlsController < ApplicationController
 
   def index
+    @url = Url.new
     if current_user
       @urls = current_user.urls
     elsif session[:url_ids] and session[:url_ids].any?

@@ -1,4 +1,5 @@
 <%= form_for(@url) do |f| %>
+
   <% if @url.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@url.errors.count, "error") %> prohibited this url from being saved:</h2>
@@ -11,17 +12,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :original_url, "Original" %><br />
-    <%= f.text_field :original_url %>
-  </div>
 
- <div class="field">
-    <%= f.label :short_url, "Customize?" %><br />
-    <%= f.text_field :short_url %>
-  </div>
+    <%= f.label :original_url, "Original" %><br /><%= f.text_field :original_url %><%= f.label :short_url, "Customize?" %><br />
+    <%= f.text_field :short_url %><%= f.submit "Beer me" %>
 
-  <div class="actions">
-    <%= f.submit "Beer me" %>
-  </div>
+
+
 <% end %>
