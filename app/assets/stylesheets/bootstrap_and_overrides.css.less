@@ -32,6 +32,14 @@
 
 @linkColor: #D11010;
 
+#nav_logo{
+  width: 120px;
+}
+
+#logo_large{
+  width: 21%;
+}
+
 .container{
   text-align: center;
   margin: 0 auto;
@@ -57,6 +65,7 @@ body {
   font-family: 'Josefin Slab', serif;
   font-weight: 600; 
   font-size: 1.1em;
+  color: #6f6565;
 
 }
 
@@ -76,11 +85,21 @@ body {
   padding: 0;
 }
 
-
-
-
-
-
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
 
 
 
