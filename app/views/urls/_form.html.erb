@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :original_url %><br />
-    <%= f.text_area :original_url %>
+    <%= f.label :original_url, "Original" %><br />
+    <%= f.text_field :original_url %>
   </div>
 
  <div class="field">
-    <%= f.label :short_url, "Vanity URL" %><br />
+    <%= f.label :short_url, "Customize?" %><br />
     <%= f.text_field :short_url %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Beer me" %>
   </div>
 <% end %>
