@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div class="container">
   <div><% if flash[:error] %><h4><%= flash[:error] %></h4><% end %></div>
 
   <ul class="hmenu">
@@ -16,6 +16,6 @@
   </ul>
 
   <%= yield %>
-
+</div>
 </body>
 </html>
