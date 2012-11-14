@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>hpstr.ly</title>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+  </head>
 
-<head>
-  <title>Hpstr.ly</title>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-  <![endif]-->
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
-</head>
+  <body>
+    <div class="container">
 
-<body>
-  <div class="container">
+    <div><% if flash[:error] %><h4><%= flash[:error] %></h4><% end %></div>
 
-  <div><% if flash[:error] %><h4><%= flash[:error] %></h4><% end %></div>
+    <ul id="navbar">
+      <%= render 'devise/menu/registration_items' %>
+      <%= render 'devise/menu/login_items' %>
+    </ul>
 
-  <ul class="hmenu">
-    <%= render 'devise/menu/registration_items' %>
-    <%= render 'devise/menu/login_items' %>
-  </ul>
+    <%= yield %>
 
-  <%= yield %>
-
-  </div>
-</body>
+    </div>
+  </body>
 </html>

@@ -1,27 +1,26 @@
-<h1>Listing urls</h1>
+<h1>hpstr.ly / </h1>
+<h3>an analog url shortener</h3>
 
-<%= render 'form' %>
-
-<table>
-  <tr>
-    <th>URL</th>
-    <th>Shortened URL</th>
-    <th>Page Views</th>
-  </tr>
-
-<% @urls && @urls.each do |url| %>
-  <tr>
-    <td><%= url.original_url %></td>
-    <td><%= link_to url.short_url, url.short_url, :target => "_blank" %></td>
-    <td><%= url.page_views %></td>
-  </tr>
-<% end %>
-</table>
+  <%= render 'form' %>
 
 
 
+  <table class="span10 url_table">
+    <div class="span10">
+      <tr>
+        <th>URL</th>
+        <th>Shortened URL</th>
+        <th>Page Views</th>
+      </tr>
+
+      <% @urls && @urls.each do |url| %>
+        <tr>
+          <td class="span5"><%= url.original_url %></td>
+          <td class="span5"><%= link_to url.short_url, url.short_url, :target => "_blank" %></td>
+          <td class="span2"><%= url.page_views %></td>
+        </tr>
+      <% end %>
+    </div>
+  </table>
 
 
-
-
-<%= button_to 'New url', new_url_path, :method => :get, :class => 'btn btn-large btn-danger' %>
