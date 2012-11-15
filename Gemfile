@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'devise'
+gem "twitter-bootstrap-rails"
+
 
 group :production do
   gem "pg", "~> 0.14.1"
@@ -18,7 +20,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem "therubyracer"
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
 end
 
 gem 'jquery-rails'
