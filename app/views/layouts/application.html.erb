@@ -13,15 +13,19 @@
   </head>
 
   <body>
-    <div class="container">
-
-    <div><% if flash[:error] %><h4><%= flash[:error] %></h4><% end %></div>
+    <div class="container-narrow">
 
     <ul id="navbar">
       <%= link_to image_tag("logo_small.png", id: "nav_logo", alt: "hpstr.ly"), '/' %>
       <%= render 'devise/menu/registration_items' %>
       <%= render 'devise/menu/login_items' %>
     </ul>
+
+
+    <div><% if flash[:error] %>
+      <h4><%= flash[:error] %></h4>
+    <% end %></div>
+
 
     <%= yield %>
 

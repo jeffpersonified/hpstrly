@@ -1,14 +1,12 @@
-
 <h1> 
 <%= link_to image_tag("logo_large.png", id: "logo_large", alt: "hpstr.ly"), '/' %>
-  / </h1>
+   / helvetica _ leggings _ PBR </h1>
 
 <h3>an analog url shortener</h3>
 
   <%= render 'form' %>
 
-  <table class="span10 url_table">
-    <div class="span10">
+  <table class="url_table table-striped">
       <tr>
         <th>URL</th>
         <th>Shortened URL</th>
@@ -16,13 +14,12 @@
       </tr>
 
       <% @urls && @urls.each do |url| %>
+
         <tr>
-          <td class="span5"><%= url.original_url %></td>
-          <td class="span5"><%= link_to url.short_url, url.short_url, :target => "_blank" %></td>
-          <td class="span2"><%= url.page_views %></td>
+          <td><%= url.original_url %></td>
+          <td><%= link_to url.short_url, url.short_url, :target => "_blank" %></td>
+          <td><%= url.page_views %></td>
         </tr>
       <% end %>
-    </div>
   </table>
-
 
