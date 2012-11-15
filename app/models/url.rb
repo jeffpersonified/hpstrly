@@ -11,8 +11,39 @@ class Url < ActiveRecord::Base
 
   private
 
+#   def gen_url
+#     random_string = SecureRandom.hex(3)
+#     self.short_url = "#{random_string}"
+#   end
+# end
+
+
+
+
   def gen_url
-    random_string = SecureRandom.hex(3)
-    self.short_url = "#{random_string}"
+    words = [ "street", "art", "odd", "future", "vinyl", "food", "truck", 
+              "tofu", "whatever", "narwhal", "fannypack", "readymade", 
+              "godard", "blog", "austin", "sf", "missiondist", "gastropub", 
+              "farmtotable", "dolores", "8bit", "pitchfork", "leggings", 
+              "authentic", "helvetica", "etsy", "biodiesel", "semiotics", 
+              "selvage", "denim", "occupy", "diy", "mustache", "stache", 
+              "skateboard", "gentrify", "cardigan", "steinbeck", "sriracha", 
+              "postironic", "post-modern", "ethical", "jorts", "skinnyjeans", 
+              "trustfund", "hoodie", "banksy", "vegan", "pbr", "artisan", 
+              "beard", "fingerstache", "organic", "bespoke", "sustainable", 
+              "irony", "yogi", "popup", "fourbarrel", "sightglass", "neat", 
+              "kalechips", "porkbelly", "tumblr", "warbyparker", "quinoa", 
+              "fixie", "tattooed", "wesanderson", "wes", "typewriter", "cliche", 
+              "synth", "letterpress", "forage", "stumptown", "thundercats", 
+              "plus1", "streetart", "sriracha", "photobooth", "butcher", 
+              "chillwave", "aesthetic", "viral", "directtrade", "fourloko", 
+              "smallbatch", "brunch", "pourover", "soldout", "flexitarian", 
+              "messengerbag", "highlife", "polaroid", "instagram", "bicycle", 
+              "pinterest", "mastercleanse", "retro", "gluten-free", "umami", 
+              "iphone", "chambray", "godard", "americanapparel", "wayfarers", 
+              "brooklyn", "keffiyeh", "salvia", "existential", "kierkegaard", 
+              "introverted"]
+
+    self.short_url = "#{words.sample}_#{words.sample}_#{words.sample}"
   end
 end
