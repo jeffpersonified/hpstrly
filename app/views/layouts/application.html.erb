@@ -13,22 +13,19 @@
   </head>
 
   <body>
-    <div class="container-narrow">
+    <div class="container">
+      <ul id="navbar">
+        <%= link_to image_tag("logo_small.png", id: "nav_logo", alt: "hpstr.ly"), '/' %>
+        <%= render 'devise/menu/registration_items' %>
+        <%= render 'devise/menu/login_items' %>
+      </ul>
 
-    <ul id="navbar">
-      <%= link_to image_tag("logo_small.png", id: "nav_logo", alt: "hpstr.ly"), '/' %>
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/login_items' %>
-    </ul>
+      <% if flash[:error] %>
+        <h4><%= flash[:error] %></h4>
+      <% end %>
 
-
-    <div><% if flash[:error] %>
-      <h4><%= flash[:error] %></h4>
-    <% end %></div>
-
-
-    <%= yield %>
-
+      <%= yield %>
     </div>
+
   </body>
 </html>

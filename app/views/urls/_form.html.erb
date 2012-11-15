@@ -1,34 +1,20 @@
 <%= form_for(@url) do |f| %>
-
   <% if @url.errors.any? %>
-
     <div id="error_explanation">
-
       <h4><%= pluralize(@url.errors.count, "error") %> 
-        prohibited this url from being saved:
+          prohibited this url from being saved:
       </h4>
-
       <ul>
-      <% @url.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @url.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
-
     </div>
-
   <% end %>
 
   <div class="row">
-    <div class="span10">
-      <div class="row">
-        <div class="span7"><%= f.text_field :original_url, 
-                                            :placeholder => "Paste original link", 
-                                            :class => "#"%></div>
-
-        <div class="span2"><%= f.text_field :short_url,
-                                            :placeholder => "Customize?" %></div>
-      </div>
-      <div class="center"><%= f.submit "Beer me", :class => "btn btn-large btn-danger btn-margin" %></div>
-    </div>
+    <%= f.text_field :original_url, :placeholder => "Paste original link", :class => "span7" %>
+    <%= f.text_field :short_url, :placeholder => "Customize?" , :class => "span3"%>
+    <%= f.submit "Beer me", :class => "btn btn-large btn-danger" %>
   </div>
 <% end %>

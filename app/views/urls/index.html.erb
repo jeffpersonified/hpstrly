@@ -2,24 +2,27 @@
 <%= link_to image_tag("logo_large.png", id: "logo_large", alt: "hpstr.ly"), '/' %>
    / helvetica _ leggings _ PBR </h1>
 
-<h3>an analog url shortener</h3>
+<h3 id="tagline">an analog url shortener</h3>
 
-  <%= render 'form' %>
+<%= render 'form' %>
 
-  <table class="url_table table-striped">
+
+<h3 id="links-margin">your links</h3>
+
+<table class="table table-striped table-bordered table-hover">
+    <tr>
+      <th class="left-col">URL</th>
+      <th>Shortened URL</th>
+      <th class="right-col">Page Views</th>
+    </tr>
+
+    <% @urls && @urls.each do |url| %>
+
       <tr>
-        <th>URL</th>
-        <th>Shortened URL</th>
-        <th>Page Views</th>
+        <td><%= url.original_url %></td>
+        <td><%= link_to url.short_url, url.short_url, :target => "_blank" %></td>
+        <td><%= url.page_views %></td>
       </tr>
-
-      <% @urls && @urls.each do |url| %>
-
-        <tr>
-          <td><%= url.original_url %></td>
-          <td><%= link_to url.short_url, url.short_url, :target => "_blank" %></td>
-          <td><%= url.page_views %></td>
-        </tr>
-      <% end %>
-  </table>
+    <% end %>
+</table>
 
