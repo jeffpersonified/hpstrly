@@ -4,7 +4,7 @@ gem 'rails', '3.2.8'
 gem 'devise'
 
 group :production do
-  gem 'pg'
+  gem "pg", "~> 0.14.1"
 end
 
 
