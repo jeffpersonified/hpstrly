@@ -21,7 +21,7 @@
 
       <tr>
         <td><%= url.original_url %></td>
-        <td><%= link_to url.short_url, url.short_url, :target => "_blank" %></td>
+        <td><%= link_to "hpstr.ly/#{url.short_url}", url.short_url, :target => "_blank" %></td>
         <td><%= url.page_views %></td>
       </tr>
     <% end %>
