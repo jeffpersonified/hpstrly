@@ -11,15 +11,6 @@ class Url < ActiveRecord::Base
 
   private
 
-#   def gen_url
-#     random_string = SecureRandom.hex(3)
-#     self.short_url = "#{random_string}"
-#   end
-# end
-
-
-
-
   def gen_url
     words = [ "street", "art", "odd", "future", "vinyl", "food", "truck", 
               "tofu", "whatever", "narwhal", "fannypack", "readymade", 
