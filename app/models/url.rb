@@ -33,7 +33,7 @@ class Url < ActiveRecord::Base
               "pinterest", "mastercleanse", "retro", "gluten-free", "umami", 
               "iphone", "chambray", "godard", "americanapparel", "wayfarers", 
               "brooklyn", "keffiyeh", "salvia", "existential", "kierkegaard", 
-              "introverted"]
+              "introverted", "vintage" ]
 
     self.short_url = "#{words.sample}_#{words.sample}_#{words.sample}"
   end

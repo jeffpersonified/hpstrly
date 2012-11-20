@@ -1,12 +1,17 @@
 <h1> 
   <%= link_to image_tag("logo_large.png", id: "logo_large", alt: "hpstr.ly"), '/' %>
-  <span>/ helvetica _ leggings _ PBR</span>
+  <span class="fadingText">/
+    <span class="content"> helvetica _ leggings _ PBR</span>
+    <span class="content"> ironic _ vintage _ cardigan</span>
+    <span class="content"> bespoke _ diy _ steinbeck</span>
+    <span class="content"> selvage _ mustache _ tofu</span>
+    <span class="content"> fixie _ gastropub _ biodiesel</span>
+  </span>
 </h1>
 
 <h3 id="tagline">an analog url shortener</h3>
 
 <%= render 'form' %>
-
 
 <h3 id="links-margin">your links</h3>
 
@@ -17,8 +22,7 @@
       <th class="right-col">Page Views</th>
     </tr>
 
-    <% @urls && @urls.each do |url| %>
-
+    <% @urls.each do |url| %>
       <tr>
         <td><%= url.original_url %></td>
         <td><%= link_to "hpstr.ly/#{url.short_url}", url.short_url, :target => "_blank" %></td>

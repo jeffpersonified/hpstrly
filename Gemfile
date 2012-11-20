@@ -14,6 +14,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'quiet_assets'
 end
 
 group :assets do
