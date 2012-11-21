@@ -1,15 +1,7 @@
 <%= form_for(@url) do |f| %>
+
   <% if @url.errors.any? %>
-    <div id="error_explanation">
-      <h4><%= pluralize(@url.errors.count, "error") %> 
-          prohibited this url from being saved:
-      </h4>
-      <ul>
-        <% @url.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render 'error' %>
   <% end %>
 
   <div class="row">
