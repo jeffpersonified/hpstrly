@@ -11,6 +11,7 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+    <!-- google analytics -->
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -25,26 +26,19 @@
 
     </script>
   </head>
-
   <body>
-    <div class="container">
+    <div class="container-narrow">
       <ul id="navbar">
         <%= link_to image_tag("logo_small.png", id: "nav_logo", alt: "hpstr.ly"), '/' %>
         <%= render 'devise/menu/registration_items' %>
         <%= render 'devise/menu/login_items' %>
       </ul>
 
-
       <%= yield %>
 
-
-        <div id="footer">
-          <div class="container">Made by <a href="http://jeffmatthewsmith.tumblr.com/">Jeff Smith</div>
-
+      <div id="footer">
+        <div class="container">Crafted by Jeff Smith <a href="https://github.com/jeffpersonified/hpstrly">Fork me.</div>
       </div>
-
     </div>
-
-
   </body>
 </html>
