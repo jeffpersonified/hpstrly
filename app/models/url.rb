@@ -3,12 +3,12 @@ class Url < ActiveRecord::Base
 
   attr_accessible :original_url, :short_url, :page_views
 
-  validates :original_url, :presence => { :message => "Uh... enter a url." }
+  validates :original_url, :presence => { :message => "You're not from around here, are you? Enter a url." }
   validates :short_url, :uniqueness => { :message => "Choose a unique url. Maybe you don't know any..." }
 
-  validates_format_of :original_url, 
-                      :with => URI::regexp(%w(http https)), 
-                      :message => "Choose a valid url. Yours was too obscure even for us."
+  validates_format_of :original_url,
+                      :with => URI::regexp(%w(http https)),
+                      :message => "Choose a valid url. Yours was too obscure."
 
   before_create :gen_url, :if => Proc.new { |url| url.short_url.blank? }
 
