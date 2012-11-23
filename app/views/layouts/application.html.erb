@@ -2,15 +2,17 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
     <title>hpstr.ly</title>
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+
     <!-- google analytics -->
     <script type="text/javascript">
 
@@ -27,15 +29,19 @@
     </script>
   </head>
   <body>
-    <div class="container-narrow">
-      <ul id="navbar">
-        <%= link_to image_tag("logo_small.png", id: "nav_logo", alt: "hpstr.ly"), '/' %>
-        <%= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
-      </ul>
-      <%= yield %>
-      <div id="footer">
-        <div class="container-narrow">Crafted by <a href="https://twitter.com/jeffpersonified">@jeffpersonified</a> – <a href="https://github.com/jeffpersonified/hpstrly">Fork me.</a></div>
+    <div class="row">
+      <div class="eleven columns centered">
+        <ul id="navbar">
+          <%= link_to image_tag("logo_small.png", id: "nav_logo", alt: "hpstr.ly"), '/' %>
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+
+        <%= yield %>
+
+        <div id="footer">
+          Crafted by <a href="https://twitter.com/jeffpersonified">@jeffpersonified</a> – <a href="https://github.com/jeffpersonified/hpstrly">Fork it.</a>
+        </div>
       </div>
     </div>
   </body>

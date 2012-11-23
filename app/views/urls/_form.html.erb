@@ -3,11 +3,22 @@
   <% if @url.errors.any? %>
     <%= render 'error' %>
   <% end %>
+  
 
   <div class="row">
-    <%= f.text_field :original_url, :placeholder => "Paste original link", :class => "span7" %>
-    <%= f.text_field :short_url, :placeholder => "Customize shortened url?" , :class => "span3"%>
-    <%= f.submit "Beer me", :class => "btn btn-large btn-danger", :id => "main-btn" %>
+    <div class="seven columns">
+      <%= f.text_field :original_url, :placeholder => "Paste original link", :class => "#" %>
+    </div>
+    <div class="three columns">
+      <%= f.text_field :short_url, :placeholder => "Customize shortened url?" , :class => "#"%>
+    </div>
+    <div class="two columns">
+      <%= f.submit "Beer me", :class => "radius button", :id => "url_submit" %>
+    </div>
   </div>
-
 <% end %>
+
+
+
+
+

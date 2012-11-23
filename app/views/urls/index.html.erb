@@ -1,37 +1,43 @@
-<h1>
-  <span id="static">
-    <%= link_to image_tag("logo_large.png", id: "logo_large", alt: "hpstr.ly"), '/' %>  /
-  </span>
-  <div id="text-container">
-    <span class="fadingText">
-      <span class="content"> helvetica _ leggings _ PBR</span>
-      <span class="content"> ironic _ vintage _ cardigan</span>
-      <span class="content"> bespoke _ diy _ steinbeck</span>
-      <span class="content"> selvage _ tofu _ mustache</span>
-      <span class="content"> fixie _ biodiesel _ gastropub</span>
-    </span>
+<div class="row">
+  <div class="ten columns centered">
+    <h1>
+      <span class="example_urls">
+        <%= link_to image_tag("logo_large.png", id: "logo_large", alt: "hpstr.ly, a hipster url shortener"), '/' %>
+        <span class="fadingText">/
+          <span class="content"> helvetica_leggings_PBR    </span>
+          <span class="content"> ironic_vintage_cardigan   </span>
+          <span class="content"> bespoke_fixie_steinbeck     </span>
+          <span class="content"> selvage_tofu_mustache     </span>
+          <span class="content"> diy_biodiesel_gastropub </span>
+        </span>
+      </span>
+    </h1>
   </div>
-</h1>
+</div>
 
-<h3 id="tagline">an analog url shortener</h3>
+<h3 class="centered" id="below_header">an analog url shortener</h3>
 
 <%= render 'form' %>
 
-<h3 id="links-margin">your links</h3>
+<h3 class="centered" id="links">your links</h3>
 
-<table class="table table-striped table-bordered table-hover">
+<table class="twelve">
+  <thead>
     <tr>
-      <th class="left-col">URL</th>
-      <th>Shortened URL</th>
-      <th class="right-col">Page Views</th>
+      <th class="head">URL</th>
+      <th class="head">Shortened URL</th>
+      <th class="head">Page Views</th>
     </tr>
-
+  </thead>
+  <tbody>
     <% @urls && @urls.each do |url| %>
       <tr>
-        <td><%= url.original_url %></td>
-        <td><%= link_to "hpstr.ly/#{url.short_url}", url.short_url, :target => "_blank" %></td>
-        <td><%= url.page_views %></td>
+        <td class="data"><%= url.original_url %></td>
+        <td class="data"><%= link_to "hpstr.ly/#{url.short_url}", url.short_url, :target => "_blank" %></td>
+        <td class="data"><%= url.page_views %></td>
       </tr>
     <% end %>
+  </tbody>
 </table>
+
 
