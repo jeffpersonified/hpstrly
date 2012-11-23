@@ -26,6 +26,3 @@ end
 gem 'jquery-rails'
 gem 'rails_best_practices'
 gem 'debugger'
-
-
-
