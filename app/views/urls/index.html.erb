@@ -1,6 +1,6 @@
 <div class="row">
   <div class="ten columns centered">
-    <h1>
+    <h1 id="fittext">
       <span class="example_urls">
         <%= link_to image_tag("logo_large.png", id: "logo_large", alt: "hpstr.ly, a hipster url shortener"), '/' %>
         <span class="fadingText">/
@@ -43,4 +43,22 @@
 <div id="footer">
   Crafted by <a href="https://twitter.com/jeffpersonified">@jeffpersonified</a> – <a href="https://github.com/jeffpersonified/hpstrly">Fork it.</a>
 </div>
+
+
+
+
+
+
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="jquery.fittext.js"></script>
+  <script type="text/javascript">
+    $("#fittext").fitText();
+  </script>
+
+
+
+
+
 
