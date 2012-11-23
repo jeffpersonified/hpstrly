@@ -15,7 +15,32 @@
 //= require foundation
 //= require_tree .
 
+// hide fading text for mobile devices
+$(document).ready(function() {
+  var switched = false;
+  var hideText = function() {
+    if (($(window).width() < 960) && !switched ){
+      switched = true;
+      $(".fadingText").toggle('showOrHide');
+      $("#index_header").css('text-align','center');
+      $("#logo_large").css('float', 'none')
+      $("#logo_large").css('margin', '0 auto')
+      return true;
+    }
+    else if (switched && ($(window).width() > 960)) {
+      switched = false;
+      $(".fadingText").toggle('showOrHide');
+      $("#index_header").css('text-align','left');
+      $("#logo_large").css('float', 'left')
+      $("#logo_large").css('margin', '-25px 12px 0 70px')
+    }
+  };
 
+  $(window).load(hideText);
+  $(window).bind("resize", hideText);
+});
+
+// fade url text
 $(document).ready(function(){
   function fadeText (){
     $(".fadingText .content:hidden:first").fadeIn(500).delay(2000).fadeOut(500, function() {
@@ -26,6 +51,7 @@ $(document).ready(function(){
   fadeText();
 });
 
+// update tables for mobile devices
 $(document).ready(function() {
   var switched = false;
   var updateTables = function() {
@@ -66,6 +92,6 @@ $(document).ready(function() {
     original.unwrap();
     original.unwrap();
   }
-
 });
+
 

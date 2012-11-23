@@ -277,7 +277,7 @@ h1 {
   float: left;
   width: 30%;
   min-width: 180px;
-  margin: -25px 12px 0 25px;
+  margin: -25px 12px 0 70px;
 }
 
 h3.centered{
@@ -379,6 +379,9 @@ label {
 }
 
 /*  responsive table formatting */
+tr:hover td { 
+  background: rgba(111, 101, 101, 0.13) !important; 
+}​
 
 table th { 
   font-weight: bold; 
@@ -389,6 +392,8 @@ table td, table th {
 }
 
 /* mobilify tables */
+
+
 @media only screen and (max-width: 767px) {
   
   table.responsive { 
