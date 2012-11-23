@@ -1,12 +1,18 @@
-<h2>Forgot your password?</h2>
+<div class="row">
+  <div class="four columns centered user">
+    <h2>Forgot your password?</h2>
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+      <div><%= f.label :email, :class => "forms" %>
+      <%= f.email_field :email %></div>
+      <br>
+      <div><%= f.submit "*sigh* Okay…", :class => "radius button" %></div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+ </div>
+</div>
 
-  <div><%= f.label :email, :class => "forms" %><br />
-  <%= f.email_field :email %></div>
 
-  <div><%= f.submit "*sigh* Okay…", :class => "btn btn-large btn-danger btn-margin", :id => "forgot_margin" %></div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+

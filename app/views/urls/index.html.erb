@@ -21,7 +21,7 @@
 
 <h3 class="centered" id="links">your links</h3>
 
-<table class="twelve">
+<table class="twelve responsive">
   <thead>
     <tr>
       <th class="head">URL</th>
@@ -32,12 +32,15 @@
   <tbody>
     <% @urls && @urls.each do |url| %>
       <tr>
-        <td class="data"><%= url.original_url %></td>
         <td class="data"><%= link_to "hpstr.ly/#{url.short_url}", url.short_url, :target => "_blank" %></td>
+        <td class="data"><%= url.original_url %></td>
         <td class="data"><%= url.page_views %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<div id="footer">
+  Crafted by <a href="https://twitter.com/jeffpersonified">@jeffpersonified</a> – <a href="https://github.com/jeffpersonified/hpstrly">Fork it.</a>
+</div>
 
