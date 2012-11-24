@@ -248,10 +248,11 @@ $tableBorderRadius: 6px;
 
 
 $tableBorderRadius: 6px;
-$font_size: 1em; /*15px*/
+
+$font_size: 1em; /* or 15px*/
 
 h1 {
-  font-size: $font_size * 2 + .5; /*32px*/
+  font-size: $font_size * 2 + .5; /* or 32px*/
 }
 
 #nav_logo {
@@ -279,14 +280,14 @@ h3#below_header {
 }
 
 h3#links {
-  margin-top: 7%;
+  margin-top: 75px;
 }
 
 ul#navbar {
   padding: 0;
   margin: 1% 0 9% 0;
   li {
-  font-weight: 800;
+  font-weight: 700;
   font-size: $font_size + .2;
   padding: 5px 0px 5px 25px;
   display:inline;
@@ -337,7 +338,7 @@ div.alert-box.alert {
  
 th.head{
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 700;
   color: #6F6565;
 }
 
@@ -370,16 +371,13 @@ tr:hover td {
   background: rgba(111, 101, 101, 0.13) !important; 
 }​
 
-table th { 
-  font-weight: bold; 
-}
+
 table td, table th { 
   padding: 9px 10px; 
   text-align: left; 
 }
 
 /* mobilify tables */
-
 
 @media only screen and (max-width: 767px) {
   
